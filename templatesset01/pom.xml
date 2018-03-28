@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jahia.modules</groupId>
+    <artifactId>myProject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>templatesset01</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+  <name>templatesSet01</name>
+  <description>This is the custom profile module (templatesSet01) for running on a Digital Experience Manager server.</description>
+  <properties>
+    <jahia-module-type>templatesSet</jahia-module-type>
+    <jahia-depends>bootstrap3-components,bootstrap3-core,default</jahia-depends>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

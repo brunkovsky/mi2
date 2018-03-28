@@ -1,0 +1,17 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<myjnt = 'http://www.jahia.org/jahia/mynt/1.0'>
+<myjmix = 'http://www.jahia.org/jahia/mymix/1.0'>
+
+[myjmix:group] > jmix:droppableContent mixin
+
+[myjnt:myComp1] > jnt:content, myjmix:myMixin1, myjmix:group
+ - nodeToCopy (weakreference)
+
+[myjmix:myMixin1] mixin
+ - text (string)
+
+[myjnt:header] > jnt:content, myjmix:group
+ - logo (weakreference, picker[type='image'])
+ - text (string, richtext)
+ - additionalLogo (weakreference, picker[type='image'])
