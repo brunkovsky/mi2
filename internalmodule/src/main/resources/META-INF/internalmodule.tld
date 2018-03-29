@@ -14,6 +14,6 @@
         <description>Return exchange JSON</description>
         <name>getExchangeRage</name>
         <function-class>tags.MyLangUtility</function-class>
-        <function-signature>java.lang.String getExchangeRage()</function-signature>
+        <function-signature>java.lang.String getExchangeRage(java.lang.String)</function-signature>
     </function>
 </taglib>
