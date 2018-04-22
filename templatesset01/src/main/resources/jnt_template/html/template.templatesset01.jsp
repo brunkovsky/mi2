@@ -15,18 +15,13 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <title>${fn:escapeXml(renderContext.mainResource.node.displayableName)}</title>
+    <%@include file="header.jsp"%>
 </head>
-
 <body>
-
-<div class="bodywrapper">
-    <template:area path="header" moduleType="absoluteArea"/>
-    <template:area path="pagecontent"/>
-    <template:area path="footer" moduleType="absoluteArea"/>
-</div>
-
+    <div class="bodywrapper">
+        <template:area path="header" moduleType="absoluteArea"/>
+        <template:area path="pagecontent"/>
+        <template:area path="footer" moduleType="absoluteArea"/>
+    </div>
 </body>
 </html>

@@ -12,13 +12,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MyLangUtility {
-    public static String getExchangeRage(String currency) throws Exception {
-        String response= getResponse(currency);
-        response = response.substring(1, response.length() - 1);
-        JSONObject jsonObject = new JSONObject(response);
-        return jsonObject.get("rate").toString();
+    public static String getExchangeRage(String currency) {
+        try {
+            String response= getResponse(currency);
+            response = response.substring(1, response.length() - 1);
+            JSONObject jsonObject = new JSONObject(response);
+            return jsonObject.get("rate").toString();
+        } catch (JSONException | IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+
     }
-    private static String getResponse(String valuta) throws Exception {
+    private static String getResponse(String valuta) throws IOException {
         Date dateNow = new Date();
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyyMMdd");
         String today = formatForDateNow.format(dateNow);
@@ -26,7 +32,7 @@ public class MyLangUtility {
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
         int responseCode = con.getResponseCode();
         if (responseCode != 200) {
-            throw new Exception("responseCode = " + Integer.toString(responseCode));
+            throw new IOException("responseCode = " + Integer.toString(responseCode));
         }
         System.out.println("\nSending 'GET' request to URL : " + url);
         System.out.println("Response Code : " + responseCode);

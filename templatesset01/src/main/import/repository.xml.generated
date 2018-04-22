@@ -23,11 +23,26 @@
                   jcr:mixinTypes="jmix:theme"
                   jcr:primaryType="jnt:template">
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <breadcrumb displayCurrentPage="true"
-                              displayHome="true"
-                              displayLinkOnCurrentPage="true"
-                              displayOnFirstLevel="true"
-                              jcr:primaryType="jnt:pageBreadcrumb"/>
+                            <area-full-width1 j:allowedTypes="jnt:navMenu"
+                                    j:numberOfItems="1"
+                                    j:skin="skins.box3"
+                                    jcr:mixinTypes="jmix:skinnable"
+                                    jcr:primaryType="jnt:area">
+                                <area-full-width2 jcr:primaryType="jnt:contentList">
+                                    <navigation-menu j:baselineNode="home"
+                                         j:maxDepth="1"
+                                         j:menuItemView="menuElement"
+                                         j:startLevel="0"
+                                         jcr:primaryType="jnt:navMenu"/>
+                                </area-full-width2>
+                                <area-full-width1 jcr:primaryType="jnt:contentList">
+                                    <navigation-menu j:baselineNode="home"
+                                         j:maxDepth="1"
+                                         j:menuItemView="menuElement"
+                                         j:startLevel="0"
+                                         jcr:primaryType="jnt:navMenu"/>
+                                </area-full-width1>
+                            </area-full-width1>
                             <section--container--row--grid columnsType="predefinedColumns"
                                                  grid="3_9"
                                                  gridLayout="fixed-width"
@@ -43,12 +58,17 @@
                             <area-full-width2 j:skin="skins.box3"
                                     jcr:mixinTypes="jmix:skinnable"
                                     jcr:primaryType="jnt:area"/>
-                            <navigation-menu j:maxDepth="2"
-                                   j:menuItemView="menuElement"
-                                   j:startLevel="0"
-                                   jcr:primaryType="jnt:navMenu"/>
                         </pagecontent>
-                        <home jcr:primaryType="jnt:pageTemplate"/>
+                        <home jcr:primaryType="jnt:pageTemplate">
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <area-page-content jcr:primaryType="jnt:area"/>
+                                <navigation-menu j:maxDepth="2"
+                                      j:menuItemView="menuElement"
+                                      j:startLevel="0"
+                                      jcr:primaryType="jnt:navMenu"/>
+                                <home-content-area jcr:primaryType="jnt:area"/>
+                            </pagecontent>
+                        </home>
                     </base>
                     <content-template j:applyOn="myjnt:myComp1"
                               j:defaultTemplate="true"
@@ -67,6 +87,12 @@
                         </pagecontent>
                     </content-template>
                     <general j:hiddenTemplate="false" jcr:primaryType="jnt:template">
+                        <general j:hiddenTemplate="false" jcr:primaryType="jnt:template">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="general"/>
+                        </general>
                         <j:translation_en jcr:language="en"
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
